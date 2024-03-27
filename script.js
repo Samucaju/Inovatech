@@ -11,18 +11,15 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function atualizarDadosAmbiente() {
-    // Atualiza os dados de temperatura, umidade e fumaça
     document.getElementById('temperatura').textContent = '25';
     document.getElementById('umidade').textContent = '60';
     document.getElementById('fumaca').textContent = 'Não detectada';
 
-    // Remove o loader
     var elementosCarregando = document.querySelectorAll('#status span');
     elementosCarregando.forEach(function(elemento) {
         elemento.classList.remove('loader');
     });
 
-    // Simula a detecção de fumaça após 5 segundos
     setTimeout(function() {
         document.getElementById('fumaca').textContent = 'Detectada';
         document.getElementById('fumaca').classList.add('piscando');
